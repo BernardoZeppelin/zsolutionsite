@@ -1,0 +1,151 @@
+@model KitchenEquip.ViewModels.HomeViewModel
+@{
+    ViewData["Title"] = "Produtos";
+    var hasFilters = !string.IsNullOrWhiteSpace(Model.SearchTerm) || !string.IsNullOrWhiteSpace(Model.SelectedCategory);
+    Layout = "_Layout";
+}
+<link rel="stylesheet" href="~/site.css">
+
+<section class="hero-section">
+    <div class="hero-bg-grid"></div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge"><i class="bi bi-star-fill me-1"></i> Importadora Exclusiva Arris no Brasil</div>
+            <h1 class="hero-title">
+                A Força da<br>
+                <span class="hero-title-accent">Tecnologia Arris</span><br>
+                na sua Cozinha
+            </h1>
+            <p class="hero-subtitle">
+                Inovação, qualidade e desempenho incomparável para o setor foodservice.<br>
+                A excelência italiana projetada para cozinhas que não podem parar.
+            </p>
+            <div class="hero-search-wrap">
+                <form asp-controller="Home" asp-action="Index" method="get" class="hero-search-form">
+                    <div class="hero-search-input-wrap">
+                        <i class="bi bi-search"></i>
+                        <input type="search" name="search" value="@Model.SearchTerm"
+                               class="hero-search-input" placeholder="Buscar equipamento Arris..." autocomplete="off" />
+                    </div>
+                    <button type="submit" class="btn btn-primary-custom">Buscar</button>
+                </form>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat"><span class="hero-stat-num">Exclusivo</span><span class="hero-stat-label">no Brasil</span></div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat"><span class="hero-stat-num">100%</span><span class="hero-stat-label">Italianos</span></div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat"><span class="hero-stat-num">Alta</span><span class="hero-stat-label">Performance</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="value-section">
+    <div class="container">
+        <div class="value-grid">
+            <div class="value-item">
+                <div class="value-icon"><i class="bi bi-award-fill"></i></div>
+                <h4>Exclusividade Arris</h4>
+                <p>Importamos diretamente da Europa toda a linha da Arris, referência mundial em grelhadores e fornos.</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon"><i class="bi bi-headset"></i></div>
+                <h4>Atendimento Consultivo</h4>
+                <p>Ajudamos você a escolher a melhor solução sob medida para potencializar o seu negócio.</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon"><i class="bi bi-tools"></i></div>
+                <h4>Suporte Especializado</h4>
+                <p>Conhecemos a realidade do foodservice. Oferecemos assistência ágil e suporte técnico de alto nível.</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon"><i class="bi bi-airplane-engines"></i></div>
+                <h4>Importação Segura</h4>
+                <p>Logística eficiente para garantir a entrega da sua tecnologia italiana com total confiança e rapidez.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="products-section">
+    <div class="container">
+
+        <div class="products-header">
+            <div class="products-header-left">
+                <h2 class="section-title">
+                    @if (hasFilters)
+                    {
+                        @if (!string.IsNullOrWhiteSpace(Model.SearchTerm))
+                        {
+                            <span>Resultados para <em>"@Model.SearchTerm"</em></span>
+                        }
+                        else
+                        {
+                            <span>@Model.SelectedCategory</span>
+                        }
+                    }
+                    else
+                    {
+                        <span>Nossas Soluções</span>
+                    }
+                </h2>
+                <span class="products-count">@Model.Products.Count equipamento(s)</span>
+            </div>
+
+            <div class="category-filters">
+                <a asp-controller="Home" asp-action="Index"
+                   class="filter-pill @(string.IsNullOrEmpty(Model.SelectedCategory) && string.IsNullOrEmpty(Model.SearchTerm) ? "active" : "")">
+                    Todos
+                </a>
+                @foreach (var cat in Model.Categories)
+                {
+                    <a asp-controller="Home" asp-action="Index" asp-route-category="@cat"
+                       class="filter-pill @(Model.SelectedCategory == cat ? "active" : "")">
+                        @cat
+                    </a>
+                }
+            </div>
+        </div>
+
+        @if (hasFilters)
+        {
+            <div class="filter-active-banner">
+                <i class="bi bi-funnel-fill me-1"></i>
+                Filtro ativo:
+                @if (!string.IsNullOrWhiteSpace(Model.SearchTerm))
+                {
+                    <strong>"@Model.SearchTerm"</strong>
+                }
+                else
+                {
+                    <strong>@Model.SelectedCategory</strong>
+                }
+                <a asp-controller="Home" asp-action="Index" class="filter-clear-link">
+                    <i class="bi bi-x-circle-fill"></i> Limpar
+                </a>
+            </div>
+        }
+
+        @if (Model.Products.Any())
+        {
+            <div class="products-grid">
+                @foreach (var product in Model.Products)
+                {
+                    <div class="product-grid-item">
+                        @await Html.PartialAsync("_ProductCard", product)
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="products-empty">
+                <i class="bi bi-search"></i>
+                <h3>Nenhum equipamento encontrado</h3>
+                <p>Tente buscar por outro termo ou categoria.</p>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-primary-custom">Ver todos os equipamentos</a>
+            </div>
+        }
+    </div>
+</section>
+

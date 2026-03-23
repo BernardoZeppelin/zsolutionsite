@@ -1,0 +1,228 @@
+@model KitchenEquip.ViewModels.ProductDetailViewModel
+@{
+    ViewData["Title"] = Model.Product.Name;
+    ViewData["MetaDescription"] = Model.Product.ShortDescription;
+    var spec = Model.Product.TechnicalSpec;
+    Layout = "_Layout";
+}
+<link rel="stylesheet" href="~/site.css">
+
+<section class="breadcrumb-section">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb-custom">
+                <li><a asp-controller="Home" asp-action="Index"><i class="bi bi-house-fill"></i> Início</a></li>
+                <li><i class="bi bi-chevron-right"></i></li>
+                <li><a asp-controller="Home" asp-action="Index" asp-route-category="@Model.Product.Category">@Model.Product.Category</a></li>
+                <li><i class="bi bi-chevron-right"></i></li>
+                <li class="active">@Model.Product.Name</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<section class="detail-hero">
+    <div class="container">
+        <div class="detail-main-grid">
+
+            <div class="detail-img-col">
+                <div class="detail-img-wrap">
+                    <span class="detail-category-badge">@Model.Product.Category</span>
+                    <img src="@Model.Product.ImageUrl" alt="@Model.Product.Name" class="detail-main-img" />
+                </div>
+            </div>
+
+            <div class="detail-info-col">
+                <h1 class="detail-product-name">@Model.Product.Name</h1>
+                <p class="detail-short-desc">@Model.Product.ShortDescription</p>
+
+                <div class="detail-quick-specs">
+                    @if (!string.IsNullOrEmpty(spec.ElectricPower))
+                    {
+                        <div class="quick-spec-item">
+                            <i class="bi bi-lightning-charge-fill"></i>
+                            <div>
+                                <span class="qs-label">Potência Elétrica</span>
+                                <span class="qs-value">@spec.ElectricPower kW</span>
+                            </div>
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(spec.Voltage))
+                    {
+                        <div class="quick-spec-item">
+                            <i class="bi bi-plug-fill"></i>
+                            <div>
+                                <span class="qs-label">Voltagem</span>
+                                <span class="qs-value">@spec.Voltage</span>
+                            </div>
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(spec.ProductDimensions))
+                    {
+                        <div class="quick-spec-item">
+                            <i class="bi bi-arrows-fullscreen"></i>
+                            <div>
+                                <span class="qs-label">Dimensões (LxPxH)</span>
+                                <span class="qs-value">@spec.ProductDimensions mm</span>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <div class="detail-price-row" style="display: block; border-bottom: none; padding-bottom: 0;">
+                    <p class="detail-price-label mb-3" style="font-size: 0.85rem;">
+                        <i class="bi bi-info-circle me-1"></i> Equipamento importado. Valores sob consulta.
+                    </p>
+                    <a asp-controller="About" asp-action="Index" fragment="ouvidoria" class="btn btn-primary-custom btn-lg w-100" style="justify-content: center;">
+                        <i class="bi bi-whatsapp me-2"></i>Solicitar Cotação com Especialista
+                    </a>
+                </div>
+                <div class="detail-cert mt-3">
+                    <i class="bi bi-shield-check-fill me-1"></i>
+                    Produto com certificação <strong>CE / EAC</strong> e garantia de importação.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="detail-tabs-section">
+    <div class="container">
+        <ul class="detail-tabs" role="tablist">
+            <li><a href="#descricao" class="detail-tab active" data-tab="descricao">Descrição</a></li>
+            <li><a href="#ficha" class="detail-tab" data-tab="ficha">Ficha Técnica</a></li>
+        </ul>
+
+        <div id="descricao" class="detail-tab-content active">
+            <div class="detail-description">
+                <p>@Model.Product.FullDescription</p>
+            </div>
+        </div>
+
+        <div id="ficha" class="detail-tab-content">
+            <div class="spec-table-wrap">
+                <table class="spec-table">
+                    <tbody>
+                        @if (!string.IsNullOrEmpty(spec.ProductDimensions))
+                        {
+                            <tr>
+                                <th><i class="bi bi-rulers"></i> Dimensões do Produto (LxPxH)</th>
+                                <td>@spec.ProductDimensions mm</td>
+                            </tr>
+                        }
+                        @if (!string.IsNullOrEmpty(spec.HobDimensions))
+                        {
+                            <tr>
+                                <th><i class="bi bi-grid-3x3"></i> Dimensões da Placa</th>
+                                <td>@spec.HobDimensions mm</td>
+                            </tr>
+                        }
+                        @if (!string.IsNullOrEmpty(spec.Voltage))
+                        {
+                            <tr>
+                                <th><i class="bi bi-plug"></i> Voltagem</th>
+                                <td>@spec.Voltage</td>
+                            </tr>
+                        }
+                        @if (!string.IsNullOrEmpty(spec.ElectricPower))
+                        {
+                            <tr>
+                                <th><i class="bi bi-lightning-charge"></i> Potência Elétrica</th>
+                                <td>@spec.ElectricPower kW</td>
+                            </tr>
+                        }
+                        @if (!string.IsNullOrEmpty(spec.GasPower) && spec.GasPower != "-")
+                        {
+                            <tr>
+                                <th><i class="bi bi-fire"></i> Potência a Gás</th>
+                                <td>@spec.GasPower kW</td>
+                            </tr>
+                        }
+                        @if (!string.IsNullOrEmpty(spec.GasConsumption) && spec.GasConsumption != "-")
+                        {
+                            <tr>
+                                <th><i class="bi bi-speedometer2"></i> Consumo de Gás</th>
+                                <td>@spec.GasConsumption</td>
+                            </tr>
+                        }
+                        @if (!string.IsNullOrEmpty(spec.GrossWeight))
+                        {
+                            <tr>
+                                <th><i class="bi bi-box-seam"></i> Peso Bruto</th>
+                                <td>@spec.GrossWeight kg</td>
+                            </tr>
+                        }
+                        @if (!string.IsNullOrEmpty(spec.PackagingVolume))
+                        {
+                            <tr>
+                                <th><i class="bi bi-box"></i> Volume da Embalagem</th>
+                                <td>@spec.PackagingVolume m³</td>
+                            </tr>
+                        }
+                        @if (!string.IsNullOrEmpty(spec.Construction))
+                        {
+                            <tr>
+                                <th><i class="bi bi-layers"></i> Material / Construção</th>
+                                <td>@spec.Construction</td>
+                            </tr>
+                        }
+                        @if (!string.IsNullOrEmpty(spec.WaterConnection) && spec.WaterConnection != "-")
+                        {
+                            <tr>
+                                <th><i class="bi bi-droplet"></i> Conexão de Água</th>
+                                <td>@spec.WaterConnection</td>
+                            </tr>
+                        }
+                        @if (!string.IsNullOrEmpty(spec.LoadingWater) && spec.LoadingWater != "-")
+                        {
+                            <tr>
+                                <th><i class="bi bi-water"></i> Carregamento de Água</th>
+                                <td>@spec.LoadingWater</td>
+                            </tr>
+                        }
+                        @if (!string.IsNullOrEmpty(spec.HeartProbe) && spec.HeartProbe != "-")
+                        {
+                            <tr>
+                                <th><i class="bi bi-thermometer-half"></i> Sonda de Coração</th>
+                                <td>@spec.HeartProbe</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+@if (Model.RelatedProducts.Any())
+{
+    <section class="related-section">
+        <div class="container">
+            <h2 class="section-title mb-4">Equipamentos Similares</h2>
+            <div class="products-grid products-grid--compact">
+                @foreach (var related in Model.RelatedProducts)
+                {
+                    <div class="product-grid-item">
+                        @await Html.PartialAsync("_ProductCard", related)
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}
+
+@section Scripts {
+    <script>
+        // Simple tab system
+        document.querySelectorAll('.detail-tab').forEach(tab => {
+            tab.addEventListener('click', e => {
+                e.preventDefault();
+                const targetId = tab.dataset.tab;
+                document.querySelectorAll('.detail-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.detail-tab-content').forEach(c => c.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(targetId)?.classList.add('active');
+            });
+        });
+    </script>
+}

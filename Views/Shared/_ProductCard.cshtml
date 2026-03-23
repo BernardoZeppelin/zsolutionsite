@@ -1,0 +1,47 @@
+﻿@model KitchenEquip.Models.Product
+
+<div class="product-card h-100 @(!Model.IsAvailable ? "product-unavailable" : "")">
+    <div class="product-card-img-wrap">
+        @if (!Model.IsAvailable)
+        {
+            <span class="product-card-category" style="background: var(--c-dark3); color: var(--c-muted);">
+                Indisponível
+            </span>
+        }
+        else
+        {
+            <span class="product-card-category">@Model.Category</span>
+        }
+
+        <a asp-controller="Products" asp-action="Details" asp-route-id="@Model.Id">
+            <img src="@(string.IsNullOrEmpty(Model.ImageUrl) ? "/img/products/placeholder.jpg" : Model.ImageUrl)"
+                 alt="@Model.Name"
+                 loading="lazy">
+        </a>
+    </div>
+
+    <div class="product-card-body">
+        <h3 class="product-card-name">@Model.Name</h3>
+
+        <p class="product-card-desc">
+            @Model.ShortDescription
+        </p>
+
+      
+        <div class="product-card-footer" style="justify-content: center; border-top: none; padding-top: 0;">
+            <a asp-controller="Products" asp-action="Details" asp-route-id="@Model.Id" class="product-card-cta">
+                Ver Ficha Técnica <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+
+        @if (Model.IsAvailable)
+        {
+            <div class="mt-3">
+                <a asp-controller="About" asp-action="Index" fragment="ouvidoria"
+                   class="btn-primary-custom w-100" style="justify-content: center;">
+                    <i class="bi bi-headset me-2"></i> Cotar Preço
+                </a>
+            </div>
+        }
+    </div>
+</div>
