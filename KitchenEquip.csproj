@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="ViewModels\HomeViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\site.css" />
     <None Include="wwwroot\site.js" />
   </ItemGroup>

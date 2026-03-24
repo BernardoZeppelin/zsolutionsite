@@ -6,6 +6,7 @@
 }
 <link rel="stylesheet" href="~/site.css">
 
+
 <section class="hero-section">
     <div class="hero-bg-grid"></div>
     <div class="container">
@@ -68,7 +69,7 @@
     </div>
 </section>
 <section class="products-section">
-    <div class="container">
+    <div class="container" id="catalog-results">
 
         <div class="products-header">
             <div class="products-header-left">
@@ -89,7 +90,6 @@
                         <span>Nossas Soluções</span>
                     }
                 </h2>
-                <span class="products-count">@Model.Products.Count equipamento(s)</span>
             </div>
 
             <div class="category-filters">
@@ -136,6 +136,22 @@
                     </div>
                 }
             </div>
+
+            @if (Model.TotalPages > 1)
+            {
+                <ul class="pagination justify-content-center custom-pagination">
+                    @for (int i = 1; i <= Model.TotalPages; i++)
+                    {
+                        <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                            <a class="page-link"
+                               asp-action="Index"
+                               asp-route-category="@Model.SelectedCategory"
+                               asp-route-search="@Model.SearchTerm"
+                               asp-route-page="@i">@i</a>
+                        </li>
+                    }
+                </ul>
+            }
         }
         else
         {
@@ -148,4 +164,3 @@
         }
     </div>
 </section>
-

@@ -1022,3 +1022,130 @@ textarea.form-input-custom { min-height: 100px; }
     object-fit: contain;
     transform: scaleX(1.2);
 }
+
+/* Custom Pagination Dark Theme */
+.custom-pagination .page-link {
+    background-color: var(--c-dark2);
+    border-color: var(--c-dark3);
+    color: var(--c-white);
+    margin: 0 4px;
+    border-radius: var(--radius);
+}
+
+.custom-pagination .page-item.active .page-link {
+    background-color: var(--c-primary);
+    border-color: var(--c-primary);
+    color: var(--c-white);
+}
+
+.custom-pagination .page-link:hover {
+    background-color: var(--c-dark3);
+    color: var(--c-primary);
+}
+
+/* ============================================================
+   ESTILIZAÇÃO DA PAGINAÇÃO (CUSTOM PAGINATION)
+   ============================================================ */
+.custom-pagination {
+    margin-top: 3rem;
+    gap: 8px; /* Espaço entre os números */
+}
+
+    .custom-pagination .page-item {
+        border: none;
+    }
+
+    .custom-pagination .page-link {
+        background-color: var(--c-dark2, #1a1a1a); /* Fundo dark vindo das suas variáveis */
+        border: 1px solid var(--c-dark3, #333);
+        color: var(--c-muted, #888);
+        padding: 10px 18px;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 600;
+        font-size: 1.1rem;
+        border-radius: 4px;
+        transition: all var(--transition, 0.3s);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+        /* Estado: Mouse sobre o número */
+        .custom-pagination .page-link:hover {
+            background-color: var(--c-dark3, #333);
+            border-color: var(--c-primary, #007bff);
+            color: var(--c-primary, #007bff);
+            transform: translateY(-2px);
+        }
+
+    /* Estado: Página Atual (Ativa) */
+    .custom-pagination .page-item.active .page-link {
+        background-color: var(--c-primary, #007bff);
+        border-color: var(--c-primary, #007bff);
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    }
+
+    /* Ajuste para acessibilidade/foco */
+    .custom-pagination .page-link:focus {
+        box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+        outline: none;
+    }
+/* ============================================================
+   AJUSTE DE IMAGEM NA PÁGINA DETAILS (DETAILS.CSHTML)
+   ============================================================ */
+
+/* Contêiner da imagem na coluna de detalhes */
+.detail-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px; /* Garante uma altura mínima visualmente agradável */
+    background-color: #ffffff; /* Fundo branco para produtos Arris */
+    border-radius: var(--radius, 12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid var(--c-dark3, #333); /* Borda sutil para definir o limite */
+}
+
+/* A imagem propriamente dita */
+.detail-main-img {
+    max-width: 100%;
+    max-height: 450px;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Encaixa a imagem inteira sem cortes  */
+    padding: 2.5rem; /* Respiro interno para o produto não encostar nas bordas */
+    transition: transform 0.5s ease;
+}
+
+/* Efeito de zoom suave ao carregar ou interagir (opcional) */
+.detail-img-wrap:hover .detail-main-img {
+    transform: scale(1.03);
+}
+
+/* Ajuste da etiqueta de categoria na página de detalhes */
+.detail-category-badge {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background-color: var(--c-primary, #007bff);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-family: 'Barlow Condensed', sans-serif;
+    z-index: 10; /* Garante que fique acima da imagem  */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .detail-img-wrap {
+        min-height: 300px;
+    }
+
+    .detail-main-img {
+        padding: 1.5rem;
+        max-height: 350px;
+    }
+}

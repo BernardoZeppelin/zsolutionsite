@@ -8,6 +8,8 @@ namespace KitchenEquip.ViewModels
         public List<string> Categories { get; set; } = new();
         public string? SelectedCategory { get; set; }
         public string? SearchTerm { get; set; }
+        public int CurrentPage { get; set; } = 1;
+        public int TotalPages { get; set; } = 1;
     }
 
     public class ProductDetailViewModel

@@ -23,5 +23,23 @@ namespace KitchenEquip.Controller
             };
             return View(viewModel);
         }
+
+        public IActionResult About()
+        {
+            // Certifique-se de que você está instanciando o AboutViewModel aqui
+            var model = new AboutViewModel
+            {
+                Contact = new ContactInfo
+                {
+                    Email = "zsolutionsimport@gmail.com",
+                    Phone = "(19) 99155-7476",
+                    WhatsApp = "(19) 99155-7476",
+                    Address = "Seu Endereço aqui"
+                }
+            };
+
+            // E passando este model para a View correspondente
+            return View(model);
+        }
     }
 }
