@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Bernardo Zeppelin\\source\\repos\\zsolutionsite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|c:\\users\\bernardo zeppelin\\source\\repos\\zsolutionsite\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|solutionrelative:views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|c:\\users\\bernardo zeppelin\\source\\repos\\zsolutionsite\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|solutionrelative:views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|c:\\users\\bernardo zeppelin\\source\\repos\\zsolutionsite\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|c:\\users\\bernardo zeppelin\\source\\repos\\zsolutionsite\\wwwroot\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|solutionrelative:wwwroot\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|c:\\users\\bernardo zeppelin\\source\\repos\\zsolutionsite\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|solutionrelative:views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|c:\\users\\bernardo zeppelin\\source\\repos\\zsolutionsite\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|solutionrelative:controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|c:\\users\\bernardo zeppelin\\source\\repos\\zsolutionsite\\mockproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|solutionrelative:mockproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|c:\\users\\bernardo zeppelin\\source\\repos\\zsolutionsite\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|c:\\users\\bernardo zeppelin\\source\\repos\\zsolutionsite\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|solutionrelative:views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|c:\\users\\bernardo zeppelin\\source\\repos\\zsolutionsite\\wwwroot\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|solutionrelative:wwwroot\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|c:\\users\\bernardo zeppelin\\source\\repos\\zsolutionsite\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|solutionrelative:controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C37D3729-C05A-26E2-7400-3308D5CE1EC4}|KitchenEquip.csproj|c:\\users\\bernardo zeppelin\\source\\repos\\zsolutionsite\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,20 +46,33 @@
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MockProductService.cs",
+              "DocumentMoniker": "C:\\Users\\Bernardo Zeppelin\\source\\repos\\zsolutionsite\\MockProductService.cs",
+              "RelativeDocumentMoniker": "MockProductService.cs",
+              "ToolTip": "C:\\Users\\Bernardo Zeppelin\\source\\repos\\zsolutionsite\\MockProductService.cs",
+              "RelativeToolTip": "MockProductService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T02:52:11.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Bernardo Zeppelin\\source\\repos\\zsolutionsite\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Bernardo Zeppelin\\source\\repos\\zsolutionsite\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAGYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAgAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-24T02:29:38.171Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\Bernardo Zeppelin\\source\\repos\\zsolutionsite\\wwwroot\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\site.css",
@@ -63,25 +80,24 @@
               "RelativeToolTip": "wwwroot\\site.css",
               "ViewState": "AgIAAHoEAAAAAAAAAAAAAIQEAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-03-24T02:10:44.885Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-24T02:10:44.885Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Bernardo Zeppelin\\source\\repos\\zsolutionsite\\Views\\About\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\About\\Index.cshtml",
               "ToolTip": "C:\\Users\\Bernardo Zeppelin\\source\\repos\\zsolutionsite\\Views\\About\\Index.cshtml",
               "RelativeToolTip": "Views\\About\\Index.cshtml",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAAAH4AAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAOoAAAAAAAAAAAAAAPAAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-23T23:51:23.479Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Bernardo Zeppelin\\source\\repos\\zsolutionsite\\Views\\Products\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Products\\Details.cshtml",
@@ -94,7 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "AboutController.cs",
               "DocumentMoniker": "C:\\Users\\Bernardo Zeppelin\\source\\repos\\zsolutionsite\\Controllers\\AboutController.cs",
               "RelativeDocumentMoniker": "Controllers\\AboutController.cs",
@@ -102,12 +118,11 @@
               "RelativeToolTip": "Controllers\\AboutController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T23:42:38.223Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T23:42:38.223Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Bernardo Zeppelin\\source\\repos\\zsolutionsite\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -119,13 +134,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Bernardo Zeppelin\\source\\repos\\zsolutionsite\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\Bernardo Zeppelin\\source\\repos\\zsolutionsite\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAYwKgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-23T23:39:02.622Z",
               "EditorCaption": ""

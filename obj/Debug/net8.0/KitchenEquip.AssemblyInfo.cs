@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KitchenEquip")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3ccf9ef4577dced7345b168388559ed636bb6c6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d46302ed2b76124c08ffdaa3b23ef94080953904")]
 [assembly: System.Reflection.AssemblyProductAttribute("KitchenEquip")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KitchenEquip")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

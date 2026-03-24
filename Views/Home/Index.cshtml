@@ -22,7 +22,7 @@
                 A excelência italiana projetada para cozinhas que não podem parar.
             </p>
             <div class="hero-search-wrap">
-                <form asp-controller="Home" asp-action="Index" method="get" class="hero-search-form">
+                <form onsubmit="return handleSearchSubmit(event)" asp-controller="Home" asp-action="Index" method="get" class="hero-search-form">
                     <div class="hero-search-input-wrap">
                         <i class="bi bi-search"></i>
                         <input type="search" name="search" value="@Model.SearchTerm"
@@ -164,3 +164,67 @@
         }
     </div>
 </section>
+
+<script>
+    async function loadPage(url, scrollToContainer = false) {
+        const container = document.getElementById('catalog-results');
+        if (!container) return;
+
+        container.style.opacity = '0.5';
+        container.style.pointerEvents = 'none';
+
+        try {
+            const response = await fetch(url);
+            const html = await response.text();
+
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const newContent = doc.getElementById('catalog-results');
+
+            if (newContent) {
+                container.innerHTML = newContent.innerHTML;
+                window.history.pushState({}, '', url);
+
+                if (scrollToContainer) {
+                    setTimeout(() => {
+                        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                }
+            }
+        } catch (err) {
+            console.error("Erro no AJAX:", err);
+        } finally {
+            container.style.opacity = '1';
+            container.style.pointerEvents = 'auto';
+        }
+    }
+
+    function handleSearchSubmit(event) {
+        event.preventDefault();
+
+        const form = event.target;
+        const formData = new FormData(form);
+        const params = new URLSearchParams(formData);
+
+        const url = `${window.location.pathname}?${params.toString()}`;
+
+        loadPage(url, true);
+
+        return false;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('click', e => {
+            const link = e.target.closest('.filter-pill, .page-link, .filter-clear-link');
+            if (link && link.tagName === 'A') {
+                e.preventDefault();
+                const isPagination = link.classList.contains('page-link');
+                loadPage(link.href, isPagination);
+            }
+        });
+
+        window.addEventListener('popstate', () => {
+            loadPage(window.location.href, false);
+        });
+    });
+</script>
