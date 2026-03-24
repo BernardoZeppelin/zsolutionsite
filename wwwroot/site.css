@@ -1149,3 +1149,17 @@ textarea.form-input-custom { min-height: 100px; }
         max-height: 350px;
     }
 }
+
+.cc-icon--red {
+    background: rgba(231, 76, 60, 0.1) !important;
+    color: #e74c3c !important;
+}
+
+
+.d-block {
+    display: block;
+}
+
+.mb-1 {
+    margin-bottom: 0.25rem;
+}

@@ -107,43 +107,40 @@
 
         <div class="contact-grid">
             <div class="contact-cards-col">
+
+              
+
                 <div class="contact-card">
-                    <div class="cc-icon cc-icon--blue"><i class="bi bi-envelope-fill"></i></div>
+                    <div class="cc-icon cc-icon--dark"><i class="bi bi-share-fill"></i></div>
                     <div class="cc-body">
-                        <h5>E-mail</h5>
-                        <p>Para cotações, suporte e ouvidoria geral</p>
-                        <a href="mailto:@c.Email" class="cc-link">@c.Email</a>
+                        <h5>Nossas redes sociais</h5>
+                        <p>Acompanhe nossas novidades e instalações</p>
+
+                        @* Coloque os links reais da sua empresa no href="#" *@
+                        <a href="#" target="_blank" class="cc-link d-block mb-1">
+                            <i class="bi bi-instagram me-1"></i> Instagram
+                        </a>
+                        <a href="#" target="_blank" class="cc-link d-block">
+                            <i class="bi bi-tiktok me-1"></i> TikTok
+                        </a>
                     </div>
                 </div>
 
-                <div class="contact-card">
-                    <div class="cc-icon cc-icon--dark"><i class="bi bi-telephone-fill"></i></div>
-                    <div class="cc-body">
-                        <h5>Telefones</h5>
-                        <p>Atendimento comercial e suporte técnico</p>
-                        <a href="tel:@c.Phone.Replace(" ", "").Replace("-", "").Replace("(", "").Replace(")", "")" class="cc-link d-block mb-1">BR: @c.Phone</a>
-                        <a href="tel:393920646489" class="cc-link d-block">IT: (39) 39206-46489</a>
-                    </div>
-                </div>
 
-                <div class="contact-card">
-                    <div class="cc-icon cc-icon--green"><i class="bi bi-whatsapp"></i></div>
-                    <div class="cc-body">
-                        <h5>WhatsApp</h5>
-                        <p>Atendimento rápido via mensagem</p>
-                        <a href="https://wa.me/55@(c.WhatsApp.Replace(" ", "").Replace("-", "").Replace("(", "").Replace(")", ""))"
-                           target="_blank" class="cc-link">@c.WhatsApp</a>
-                    </div>
-                </div>
+               
 
                 <div class="contact-card">
                     <div class="cc-icon cc-icon--orange"><i class="bi bi-geo-alt-fill"></i></div>
                     <div class="cc-body">
                         <h5>Endereço</h5>
-                        <p>Visita técnica e retirada no local</p>
+                        <p>Assistência técnica autorizada e especializada</p>
                         <span class="cc-link">@c.Address</span>
                     </div>
                 </div>
+
+
+
+
 
                 <div class="contact-card contact-card--hours">
                     <div class="cc-icon cc-icon--blue"><i class="bi bi-clock-fill"></i></div>
@@ -152,7 +149,24 @@
                         <span class="cc-link">Segunda a Sexta: 08h às 18h</span>
                     </div>
                 </div>
+
+
+
+                <div class="contact-card contact-card--ouvidoria">
+                    <div class="cc-icon cc-icon--red"><i class="bi bi-megaphone-fill"></i></div>
+                    <div class="cc-body">
+                        <h5>OUVIDORIA</h5>
+                        <p>Canal exclusivo para sugestões, elogios ou reclamações.</p>
+                        <a href="mailto:@c.Email" class="cc-link d-block mb-1">@c.Email</a>
+                        <a href="tel:5519982627118" class="cc-link">Cel: (19) 98262-7118</a>
+                    </div>
+                </div>
             </div>
+
+
+
+
+
 
             <div class="ouvidoria-form-col">
                 <div class="ouvidoria-form-card">
@@ -160,6 +174,8 @@
                         <i class="bi bi-chat-square-text-fill me-2"></i>Enviar mensagem
                     </div>
                     <p class="ouvidoria-form-subtitle">Preencha o formulário e nossa equipe especializada entrará em contato.</p>
+
+                    @* FORMULÁRIO COM IDs PARA O JAVASCRIPT *@
                     <form id="contactForm" novalidate>
                         <div class="form-group-custom">
                             <label class="form-label-custom">Nome completo *</label>
@@ -198,3 +214,53 @@
         </div>
     </div>
 </section>
+
+@section Scripts {
+    <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const contactForm = document.getElementById('contactForm');
+
+                    if (contactForm) {
+                        contactForm.addEventListener('submit', function (e) {
+                            e.preventDefault();
+
+                            // Captura os valores
+                            const name = document.getElementById('name').value;
+                            const email = document.getElementById('email').value;
+                            const phone = document.getElementById('phone').value;
+                            const subject = document.getElementById('subject').value;
+                            const message = document.getElementById('message').value;
+
+                            // Validação simples (campos obrigatórios)
+                            if (!name || !email || !subject || !message) {
+                                alert("Por favor, preencha todos os campos obrigatórios (*)");
+                                return;
+                            }
+
+                            // A MENSAGEM DO CLIENTE (com quebras de linha preservadas)
+                            const text =
+        `Olá, tudo bem? Meu nome é ${name}.
+
+        Tenho interesse em saber mais sobre os produtos da Z Solutions, especialmente do
+        assunto: ${subject}
+        Email para contato: ${email}
+
+        Mensagem: ${message}`;
+
+                            // Codifica o texto para a URL (Garante que os espaços e "Enters" funcionem no WhatsApp)
+                            const encodedText = encodeURIComponent(text);
+
+                            // Número de destino (Z Solutions)
+                            const myNumber = "5519982627118";
+
+                            // Cria a URL e abre em nova aba
+                            const waUrl = `https://wa.me/${myNumber}?text=${encodedText}`;
+                            window.open(waUrl, '_blank');
+
+                            // Reseta o formulário
+                            contactForm.reset();
+                        });
+                    }
+                });
+    </script>
+}
