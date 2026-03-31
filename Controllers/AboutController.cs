@@ -33,7 +33,7 @@ namespace KitchenEquip.Controller
                 {
                     Email = "zsolutionsimport@gmail.com",
                     Phone = "(19) 99155-7476",
-                    WhatsApp = "(19) 99155-7476",
+                    WhatsApp = "(19) 98262-7118",
                     Address = "Seu Endereço aqui"
                 }
             };
