@@ -1,3 +1,0 @@
-wwwroot\img\logo_zsolutions.png
-wwwroot\site.css
-wwwroot\site.js
